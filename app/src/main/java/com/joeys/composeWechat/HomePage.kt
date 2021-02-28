@@ -17,13 +17,14 @@ import com.joeys.composeWechat.widget.Pager
 fun HomePage() {
     val mainViewModel: MainViewModel = viewModel()
     Column() {
-        val page = mainViewModel.selectedTab
-        mainViewModel.pagerState.currentPage = page
 
+        mainViewModel.pagerState.currentPage =   mainViewModel.selectedTab
         Pager(
             state = mainViewModel.pagerState,
             modifier = Modifier.weight(1f, true),
         ) {
+
+            mainViewModel.selectedTab = currentPage
             when (page) {
                 0 -> ChatList(mainViewModel.chats)
                 1 -> Box(

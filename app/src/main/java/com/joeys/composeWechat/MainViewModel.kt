@@ -10,7 +10,7 @@ import com.joeys.composeWechat.widget.PagerState
 class MainViewModel : ViewModel() {
 
     var selectedTab by mutableStateOf(0)
-    val pagerState by mutableStateOf(PagerState())
+    val pagerState by mutableStateOf(PagerState(maxPage = 4))
     var chats by mutableStateOf(listOf<Chat>())
 
     var currentChat: Chat? by mutableStateOf(null)
